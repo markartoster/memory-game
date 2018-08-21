@@ -87,18 +87,7 @@ $(".card").click((event) => {
     $("#star3").removeClass();
     $("#star3").addClass("fa fa-star-o");
   }
-  // if(numberOfMoves < 18) {
-  //   $("#star3").removeClass();
-  //   $("#star3").addClass("fa fa-star-o");
-  // }
-  // else if(numberOfMoves < 24) {
-  //   $("#star2").removeClass();
-  //   $("#star2").addClass("fa fa-star-o");
-  // }
-  // else {
-  //   $("#star1").removeClass();
-  //   $("#star1").addClass("fa fa-star-o");
-  // }
+  
   if (number < 2) {
     number++;
     if(number === 1) {
