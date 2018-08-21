@@ -5,8 +5,9 @@ let arrayOfPictures = ['fa fa-diamond', 'fa fa-paper-plane-o', 'fa fa-anchor', '
 'fa fa-bicycle', 'fa fa-bomb','fa fa-diamond', 'fa fa-paper-plane-o', 'fa fa-anchor', 'fa fa-bolt', 'fa fa-cube',
 'fa fa-leaf', 'fa fa-bicycle', 'fa fa-bomb'];
 
-let psuedoRandomSort = arrayOfPictures.sort(() => 0.5 - Math.random());
-
+let psuedoRandomSort = () => {
+  arrayOfPictures.sort(() => 0.5 - Math.random());
+}
 
 //Time variables
 let sec = 0;
@@ -48,8 +49,8 @@ setIdToDeckCards = () => {
 }
 
 setPicturesToCards = () => {
-  let pictureId;
-  for(pictureId = 0; pictureId < cardListLength; pictureId++){
+
+  for(let pictureId = 0; pictureId < cardListLength; pictureId++){
     $(".hiddenPicture"+pictureId).addClass(arrayOfPictures[pictureId]);
     $(".hiddenPicture"+pictureId).next().addClass("hiddenPicture"+(pictureId+1));
     $(".hiddenPicture"+pictureId).removeClass("hiddenPicture"+pictureId);
@@ -61,7 +62,7 @@ let number = 0;
 let firstCard = "";
 let secondCard = "";
 let numberOfMoves = 0;
-let correctGuess = 7;
+let correctGuess = 0;
 
 //Refresh Cards
 turn = () => {
@@ -87,7 +88,7 @@ $(".card").click((event) => {
     $("#star3").removeClass();
     $("#star3").addClass("fa fa-star-o");
   }
-  
+
   if (number < 2) {
     number++;
     if(number === 1) {
@@ -172,16 +173,51 @@ $(".card").click((event) => {
     }
   }
 });
-/*
- * set up the event listener for a card. If a card is clicked:
- *  - display the card's symbol (put this functionality in another function that you call from this one)
- *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
- *  - if the list already has another card, check to see if the two cards match
- *    + if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)
- *    + if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one)
- *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
- *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
- */
+
+$(".restart").click(() => {
+    //Refresh Game variables
+    numberOfMoves = 0;
+    number = 0;
+    correctGuess = 0;
+    firstCard = "";
+    secondCard = "";
+    console.log("hello?");
+    $(".moves").html(numberOfMoves);
+    $(".card").removeClass("open show");
+    $(".card").removeClass("match");
+
+    psuedoRandomSort();
+
+    for(let cardId = 0; cardId < cardListLength; cardId++) {
+    $("#"+cardId).children().removeClass();
+    $("#"+cardId).children().addClass("hiddenPicture"+cardId);
+    }
+
+    for(let pictureId = 0; pictureId < cardListLength; pictureId++){
+      $(".hiddenPicture"+pictureId).addClass(arrayOfPictures[pictureId]);
+      $(".hiddenPicture"+pictureId).next().addClass("hiddenPicture"+(pictureId+1));
+      $(".hiddenPicture"+pictureId).removeClass("hiddenPicture"+pictureId);
+    }
+
+    //Refresh Rating
+    $("#star1").removeClass();
+    $("#star2").removeClass();
+    $("#star3").removeClass();
+    $("#star1").addClass("fa fa-star");
+    $("#star2").addClass("fa fa-star");
+    $("#star3").addClass("fa fa-star");
+
+    //Close Win Screen Window
+    $("#win-screen").removeClass("win-screen");
+    $("#content").removeClass("content");
+    $("#win-screen").addClass("hidden");
+
+    //Reset Time
+    sec = 0;
+    min = 0;
+    $(".card").removeClass("wrong");
+});
+
 
 
 startTimeCounting();
