@@ -1,17 +1,10 @@
 # Memory Game Project
 
-## Table of Contents
+## How to play
 
-* [Instructions](#instructions)
-* [Contributing](#contributing)
-
-## Instructions
-
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
-
-To get started, open `js/app.js` and start building out the app's functionality
-
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
+Click the cards to reveal their picture. Try to memorize it and find matches.
+You win only when you match all the cards. (anchor = anchor or diamond = diamond)
+The more moves you make, the worse your rating gets. Time has no meaning in your rating, so don't feel pressured.
 
 ## Contributing
 
