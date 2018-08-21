@@ -1,8 +1,6 @@
 const cardList = $('.card');
 const cardListLength = cardList.length;
 
-console.log(cardListLength);
-
 let arrayOfPictures = ['fa fa-diamond', 'fa fa-paper-plane-o', 'fa fa-anchor', 'fa fa-bolt', 'fa fa-cube', 'fa fa-leaf',
 'fa fa-bicycle', 'fa fa-bomb','fa fa-diamond', 'fa fa-paper-plane-o', 'fa fa-anchor', 'fa fa-bolt', 'fa fa-cube',
 'fa fa-leaf', 'fa fa-bicycle', 'fa fa-bomb'];
@@ -77,7 +75,7 @@ turn = () => {
 /*
   On card click
 */
-$(".card").click(function(event) {
+$(".card").click((event) => {
 
   if(numberOfMoves < 18) {
     $("#star3").removeClass();
@@ -110,10 +108,14 @@ $(".card").click(function(event) {
         $(secondId).addClass("match");
         $(firstId).removeClass("open show");
         $(secondId).removeClass("open show");
+
+        //Refresh Game variables after correct Choice
         number = 0;
         firstCard = "";
         secondCard = "";
         numberOfMoves++;
+
+        //Update UI
         $(".moves").html(numberOfMoves);
         correctGuess++;
     }
@@ -121,11 +123,17 @@ $(".card").click(function(event) {
         if(!(firstCard.isEqualNode(secondCard))) {
         $(firstId).addClass("wrong");
         $(secondId).addClass("wrong");
+
+        //Flip cards to hidden state
         setTimeout(turn , 500);
+
+        //Reset Game variables after wrong guess
         number = 0;
         firstCard = "";
         secondCard = "";
         numberOfMoves++;
+
+        //Update UI
         $(".moves").html(numberOfMoves);
         }
       }
