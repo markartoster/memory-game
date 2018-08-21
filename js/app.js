@@ -62,7 +62,7 @@ let number = 0;
 let firstCard = "";
 let secondCard = "";
 let numberOfMoves = 0;
-let correctGuess = 7;
+let correctGuess = 0;
 
 //Refresh Cards
 turn = () => {

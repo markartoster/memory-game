@@ -40,32 +40,101 @@ h1 {
   font-weight: 300;
 }
 
+/* line 36, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
+.main-title {
+  text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+  /* line 36, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
+  .main-title {
+    margin-top: .25rem;
+    margin-bottom: .25rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1020px) {
+  /* line 36, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
+  .main-title {
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+  }
+}
+
+@media screen and (min-width: 1021px) {
+  /* line 36, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
+  .main-title {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  /* line 54, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
+  .main-title--text {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1020px) {
+  /* line 54, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
+  .main-title--text {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 1021px) {
+  /* line 54, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
+  .main-title--text {
+    font-size: 3rem;
+  }
+}
+
 /*
  * Styles for the deck of cards
  */
-/* line 40, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
+/* line 73, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
 .deck {
-  width: 660px;
-  min-height: 680px;
+  width: 36rem;
+  height: 36rem;
   background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
-  padding: 32px;
-  border-radius: 10px;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
   box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  margin: 0 0 3em;
+  margin: 0 0 3rem;
 }
 
-/* line 54, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
+@media screen and (max-width: 767px) {
+  /* line 73, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
+  .deck {
+    width: 20rem;
+    height: 20rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin: 0 0 .1rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  /* line 73, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
+  .deck {
+    width: 30rem;
+    height: 30rem;
+  }
+}
+
+/* line 105, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
 .deck .card {
-  height: 125px;
-  width: 125px;
+  height: 7rem;
+  width: 7rem;
   background: #2e3d49;
   font-size: 0;
   color: #ffffff;
-  border-radius: 8px;
+  border-radius: .8rem;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -73,36 +142,92 @@ h1 {
   box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
 }
 
-/* line 68, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
+@media screen and (max-width: 767px) {
+  /* line 105, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
+  .deck .card {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 0.25rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  /* line 105, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
+  .deck .card {
+    height: 6rem;
+    width: 6rem;
+  }
+}
+
+/* line 134, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
 .deck .card.open {
   transform: rotateY(0);
   background: #02b3e4;
   cursor: default;
 }
 
-/* line 74, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
+/* line 140, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
 .deck .card.show {
-  font-size: 33px;
+  font-size: 2rem;
 }
 
-/* line 78, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
+/* line 144, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
 .deck .card.match {
   cursor: default;
   background: #02ccba;
-  font-size: 33px;
+  font-size: 2rem;
 }
 
 /*
  * Styles for the Score Panel
  */
-/* line 88, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
+/* line 154, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
 .score-panel {
   text-align: left;
-  width: 345px;
-  margin-bottom: 10px;
+  width: 30rem;
+  margin-bottom: .1rem;
+  font-size: 2rem;
 }
 
-/* line 94, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
+@media screen and (max-width: 767px) {
+  /* line 154, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
+  .score-panel {
+    width: 10rem;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1020px) {
+  /* line 154, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
+  .score-panel {
+    width: 20rem;
+    font-size: 1.5rem;
+  }
+}
+
+/* line 174, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
+.time-panel {
+  margin-bottom: .1rem;
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 767px) {
+  /* line 174, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
+  .time-panel {
+    width: 10rem;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1020px) {
+  /* line 174, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
+  .time-panel {
+    width: 20rem;
+    font-size: 1.5rem;
+  }
+}
+
+/* line 192, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
 .score-panel .stars {
   margin: 0;
   padding: 0;
@@ -110,24 +235,24 @@ h1 {
   margin: 0 5px 0 0;
 }
 
-/* line 101, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
+/* line 199, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
 .score-panel .stars li {
   list-style: none;
   display: inline-block;
 }
 
-/* line 106, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
+/* line 204, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
 .score-panel .restart {
   float: right;
   cursor: pointer;
 }
 
-/* line 111, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
+/* line 209, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
 .hidden {
   display: none;
 }
 
-/* line 115, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
+/* line 213, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
 .win-screen {
   display: block;
   position: fixed;
@@ -141,7 +266,21 @@ h1 {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* line 128, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
+@media screen and (max-width: 767px) {
+  /* line 213, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
+  .win-screen {
+    padding-top: 1rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1020px) {
+  /* line 213, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
+  .win-screen {
+    padding-top: 2rem;
+  }
+}
+
+/* line 238, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
 .content {
   position: relative;
   background-color: #02b3e4;
@@ -151,33 +290,39 @@ h1 {
   border: .1rem solid #d3d3d3;
 }
 
-/* line 137, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
+@media screen and (max-width: 767px) {
+  /* line 238, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
+  .content {
+    width: 90%;
+  }
+}
+
+/* line 259, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
 .result {
   font-size: 1.5rem;
   text-align: center;
   color: #d3d3d3;
 }
 
-/* line 142, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
+/* line 264, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
 .result-title {
   font-size: 2.5rem;
   text-align: center;
   color: #d3d3d3;
 }
 
-/* line 149, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
+/* line 271, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
 .button-play {
-  font-family: 'Righteous', cursive;
   color: #d3d3d3;
   background-color: #f19f0a;
   text-align: center;
   font-size: 2.5rem;
-  padding: 0.25rem;
-  border-radius: 0.5rem;
+  padding: 0.3rem;
+  border-radius: .4rem;
   border-color: #d3d3d3;
 }
 
-/* line 160, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
+/* line 281, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
 .win-panel .stars li {
   list-style: none;
   display: inline-block;
