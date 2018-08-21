@@ -6,8 +6,10 @@ Click the cards to reveal their picture. Try to memorize it and find matches.
 You win only when you match all the cards. (anchor = anchor or diamond = diamond)
 The more moves you make, the worse your rating gets. Time has no meaning in your rating, so don't feel pressured.
 
-## Contributing
+## Starter Code
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+This repository is the starter code for _all_ Udacity students.
 
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+## Dependecies
+[jQuery](https://jquery.com)<br/>
+[FontAwesomeIcons](https://fontawesome.com)
