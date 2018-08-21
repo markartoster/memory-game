@@ -62,7 +62,7 @@ let number = 0;
 let firstCard = "";
 let secondCard = "";
 let numberOfMoves = 0;
-let correctGuess = 0;
+let correctGuess = 7;
 
 //Refresh Cards
 turn = () => {
@@ -218,7 +218,49 @@ $(".restart").click(() => {
     $(".card").removeClass("wrong");
 });
 
+$("#play").click(() => {
+    //Refresh Game variables
+    numberOfMoves = 0;
+    number = 0;
+    correctGuess = 0;
+    firstCard = "";
+    secondCard = "";
+    console.log("hello?");
+    $(".moves").html(numberOfMoves);
+    $(".card").removeClass("open show");
+    $(".card").removeClass("match");
 
+    psuedoRandomSort();
+
+    for(let cardId = 0; cardId < cardListLength; cardId++) {
+    $("#"+cardId).children().removeClass();
+    $("#"+cardId).children().addClass("hiddenPicture"+cardId);
+    }
+
+    for(let pictureId = 0; pictureId < cardListLength; pictureId++){
+      $(".hiddenPicture"+pictureId).addClass(arrayOfPictures[pictureId]);
+      $(".hiddenPicture"+pictureId).next().addClass("hiddenPicture"+(pictureId+1));
+      $(".hiddenPicture"+pictureId).removeClass("hiddenPicture"+pictureId);
+    }
+
+    //Refresh Rating
+    $("#star1").removeClass();
+    $("#star2").removeClass();
+    $("#star3").removeClass();
+    $("#star1").addClass("fa fa-star");
+    $("#star2").addClass("fa fa-star");
+    $("#star3").addClass("fa fa-star");
+
+    //Close Win Screen Window
+    $("#win-screen").removeClass("win-screen");
+    $("#content").removeClass("content");
+    $("#win-screen").addClass("hidden");
+
+    //Reset Time
+    sec = 0;
+    min = 0;
+    $(".card").removeClass("wrong");
+});
 
 startTimeCounting();
 setIdToDeckCards();
