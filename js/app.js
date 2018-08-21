@@ -75,18 +75,30 @@ turn = () => {
 */
 $(".card").click((event) => {
 
-  if(numberOfMoves < 18) {
+  if(numberOfMoves > 16 & numberOfMoves <= 20) {
     $("#star3").removeClass();
     $("#star3").addClass("fa fa-star-o");
   }
-  else if(numberOfMoves < 24) {
+  else if(numberOfMoves > 20 & numberOfMoves <= 28) {
     $("#star2").removeClass();
     $("#star2").addClass("fa fa-star-o");
   }
-  else {
-    $("#star1").removeClass();
-    $("#star1").addClass("fa fa-star-o");
+  else if(numberOfMoves >= 28) {
+    $("#star3").removeClass();
+    $("#star3").addClass("fa fa-star-o");
   }
+  // if(numberOfMoves < 18) {
+  //   $("#star3").removeClass();
+  //   $("#star3").addClass("fa fa-star-o");
+  // }
+  // else if(numberOfMoves < 24) {
+  //   $("#star2").removeClass();
+  //   $("#star2").addClass("fa fa-star-o");
+  // }
+  // else {
+  //   $("#star1").removeClass();
+  //   $("#star1").addClass("fa fa-star-o");
+  // }
   if (number < 2) {
     number++;
     if(number === 1) {
@@ -130,17 +142,17 @@ $(".card").click((event) => {
           console.log(numberOfMoves);
           $("#moves").html("Moves: " + numberOfMoves);
 
-          if(numberOfMoves > 12 & numberOfMoves <= 18) {
+          if(numberOfMoves > 16 & numberOfMoves <= 20) {
             $("#star6").removeClass();
             $("#star6").addClass("fa fa-star-o");
           }
-          else if(numberOfMoves > 18 & numberOfMoves <= 24) {
+          else if(numberOfMoves > 20 & numberOfMoves <= 28) {
             $("#star6").removeClass();
             $("#star5").removeClass();
             $("#star6").addClass("fa fa-star-o");
             $("#star5").addClass("fa fa-star-o");
           }
-          else if(numberOfMoves >= 24) {
+          else if(numberOfMoves >= 28) {
             $("#star6").removeClass();
             $("#star5").removeClass();
             $("#star4").removeClass();
