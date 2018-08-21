@@ -129,56 +129,55 @@ h1 {
 
 /* line 115, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
 .win-screen {
-  font-family: 'Righteous', cursive;
   display: block;
   position: fixed;
-  z-index: 1;
-  padding-top: 16rem;
+  z-index: 999;
+  padding-top: 4rem;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* line 129, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
+/* line 128, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
 .content {
   position: relative;
-  background-color: #EAEAEA;
+  background-color: #02b3e4;
   margin: auto;
-  padding: 0.5rem;
-  width: 80%;
-  border-radius: 2.25rem;
+  padding: 1.5rem;
+  width: 50%;
+  border: .1rem solid #d3d3d3;
 }
 
-/* line 138, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
+/* line 137, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
 .result {
   font-size: 1.5rem;
   text-align: center;
-  color: #3A89B2;
+  color: #d3d3d3;
 }
 
-/* line 143, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
+/* line 142, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
 .result-title {
   font-size: 2.5rem;
   text-align: center;
-  color: #3A89B2;
+  color: #d3d3d3;
 }
 
-/* line 150, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
+/* line 149, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
 .button-play {
   font-family: 'Righteous', cursive;
-  color: #B7D4D3;
-  background-color: #554870;
+  color: #d3d3d3;
+  background-color: #f19f0a;
   text-align: center;
   font-size: 2.5rem;
   padding: 0.25rem;
   border-radius: 0.5rem;
-  border-color: #7D4FBB;
+  border-color: #d3d3d3;
 }
 
-/* line 161, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
+/* line 160, /Users/karolrosinski/Documents/GOOGLE ND FE/fend-project-memory-game-master/scss/app.scss */
 .win-panel .stars li {
   list-style: none;
   display: inline-block;
