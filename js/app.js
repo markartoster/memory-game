@@ -17,12 +17,14 @@ let timeCounter = 0;
 let counter;
 
 //UI elements
-let gameTimeUI = $(".time");
+const gameTimeUI = document.querySelector("#time");
+console.log(gameTimeUI);
 
 //Manages timeflow and displays it on ui
 startTimeCounting = () => {
-  counter = setInterval(function() {
+  counter = setInterval(() => {
     gameTimeUI.innerHTML = "Time: " + min +" mins "+ sec + " secs";
+    console.log(gameTimeUI);
     timeCounter = "Time: " + min +" mins "+ sec + " secs";
     sec++;
       if(sec === 60) {
