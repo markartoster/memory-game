@@ -36,8 +36,12 @@ startTimeCounting = () => {
 }
 
 /*
-  Gives ids to cards with "cursor" class usage
+  Gives ids to cards with "cursor" class usage:
+  card cursor0 <-- actual card
+  card cursor1 <-- next card, while prev cursor gets deleted
+  repeat the process
 */
+setIdToDeckCards = () => {
  if( cardListLength != 0) {
    for(let cardId = 0; cardId < cardListLength; cardId++) {
      $(".card.cursor"+cardId).attr("id", cardId);
@@ -45,14 +49,16 @@ startTimeCounting = () => {
      $(".card.cursor"+cardId).removeClass("cursor"+cardId);
    }
  }
+}
 
- let pictureId;
- for(pictureId = 0; pictureId < cardListLength; pictureId++){
-   $(".hiddenPicture"+pictureId).addClass(arrayOfPictures[pictureId]);
-   $(".hiddenPicture"+pictureId).next().addClass("hiddenPicture"+(pictureId+1));
-   $(".hiddenPicture"+pictureId).removeClass("hiddenPicture"+pictureId);
- }
-
+setPicturesToCards = () => {
+  let pictureId;
+  for(pictureId = 0; pictureId < cardListLength; pictureId++){
+    $(".hiddenPicture"+pictureId).addClass(arrayOfPictures[pictureId]);
+    $(".hiddenPicture"+pictureId).next().addClass("hiddenPicture"+(pictureId+1));
+    $(".hiddenPicture"+pictureId).removeClass("hiddenPicture"+pictureId);
+  }
+}
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
@@ -66,3 +72,5 @@ startTimeCounting = () => {
 
 
 startTimeCounting();
+setIdToDeckCards();
+setPicturesToCards();
