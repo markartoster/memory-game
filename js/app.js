@@ -35,13 +35,23 @@ startTimeCounting = () => {
 
 }
 
-startTimeCounting()
 /*
- * Display the cards on the page
- *   - shuffle the list of cards using the provided "shuffle" method below
- *   - loop through each card and create its HTML
- *   - add each card's HTML to the page
- */
+  Gives ids to cards with "cursor" class usage
+*/
+ if( cardListLength != 0) {
+   for(let cardId = 0; cardId < cardListLength; cardId++) {
+     $(".card.cursor"+cardId).attr("id", cardId);
+     $(".card.cursor"+cardId).next().addClass("cursor"+(cardId+1));
+     $(".card.cursor"+cardId).removeClass("cursor"+cardId);
+   }
+ }
+
+ let pictureId;
+ for(pictureId = 0; pictureId < cardListLength; pictureId++){
+   $(".hiddenPicture"+pictureId).addClass(arrayOfPictures[pictureId]);
+   $(".hiddenPicture"+pictureId).next().addClass("hiddenPicture"+(pictureId+1));
+   $(".hiddenPicture"+pictureId).removeClass("hiddenPicture"+pictureId);
+ }
 
 /*
  * set up the event listener for a card. If a card is clicked:
@@ -53,3 +63,6 @@ startTimeCounting()
  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
+
+
+startTimeCounting();
