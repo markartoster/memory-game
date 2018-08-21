@@ -16,13 +16,11 @@ let counter;
 
 //UI elements
 const gameTimeUI = document.querySelector("#time");
-console.log(gameTimeUI);
 
 //Manages timeflow and displays it on ui
 startTimeCounting = () => {
   counter = setInterval(() => {
     gameTimeUI.innerHTML = "Time: " + min +" mins "+ sec + " secs";
-    console.log(gameTimeUI);
     timeCounter = "Time: " + min +" mins "+ sec + " secs";
     sec++;
       if(sec === 60) {
@@ -63,7 +61,7 @@ let number = 0;
 let firstCard = "";
 let secondCard = "";
 let numberOfMoves = 0;
-let correctGuess = 0;
+let correctGuess = 7;
 
 //Refresh Cards
 turn = () => {
@@ -114,10 +112,43 @@ $(".card").click((event) => {
         firstCard = "";
         secondCard = "";
         numberOfMoves++;
-
+        console.log(numberOfMoves);
         //Update UI
         $(".moves").html(numberOfMoves);
         correctGuess++;
+        if(correctGuess === 8) {
+          $("#win-screen").removeClass("hidden");
+          document.getElementById("play-time").innerHTML = timeCounter;
+
+          //Reset time
+          sec = 0;
+          min = 0;
+
+          //Show Win-screen and set number of stars
+          $("#win-screen").addClass("win-screen");
+          $("#content").addClass("content");
+          console.log(numberOfMoves);
+          $("#moves").html("Moves: " + numberOfMoves);
+
+          if(numberOfMoves > 12 & numberOfMoves <= 18) {
+            $("#star6").removeClass();
+            $("#star6").addClass("fa fa-star-o");
+          }
+          else if(numberOfMoves > 18 & numberOfMoves <= 24) {
+            $("#star6").removeClass();
+            $("#star5").removeClass();
+            $("#star6").addClass("fa fa-star-o");
+            $("#star5").addClass("fa fa-star-o");
+          }
+          else if(numberOfMoves >= 24) {
+            $("#star6").removeClass();
+            $("#star5").removeClass();
+            $("#star4").removeClass();
+            $("#star6").addClass("fa fa-star-o");
+            $("#star5").addClass("fa fa-star-o");
+            $("#star4").addClass("fa fa-star-o");
+          }
+        }
     }
       else {
         if(!(firstCard.isEqualNode(secondCard))) {
