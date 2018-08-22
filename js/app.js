@@ -81,11 +81,11 @@ turn = () => {
 */
 $(".card").click((event) => {
 
-  if(numberOfMoves > 16 & numberOfMoves <= 20) {
+  if(numberOfMoves > 16 && numberOfMoves <= 20) {
     $("#star3").removeClass();
     $("#star3").addClass("fa fa-star-o");
   }
-  else if(numberOfMoves > 20 & numberOfMoves <= 28) {
+  else if(numberOfMoves > 20 && numberOfMoves <= 28) {
     $("#star2").removeClass();
     $("#star2").addClass("fa fa-star-o");
   }
@@ -137,11 +137,11 @@ $(".card").click((event) => {
           console.log(numberOfMoves);
           $("#moves").html("Moves: " + numberOfMoves);
 
-          if(numberOfMoves > 16 & numberOfMoves <= 20) {
+          if(numberOfMoves > 16 && numberOfMoves <= 20) {
             $("#star6").removeClass();
             $("#star6").addClass("fa fa-star-o");
           }
-          else if(numberOfMoves > 20 & numberOfMoves <= 28) {
+          else if(numberOfMoves > 20 && numberOfMoves <= 28) {
             $("#star6").removeClass();
             $("#star5").removeClass();
             $("#star6").addClass("fa fa-star-o");
@@ -186,7 +186,6 @@ $(".restart").click(() => {
     correctGuess = 0;
     firstCard = "";
     secondCard = "";
-    console.log("hello?");
     $(".moves").html(numberOfMoves);
     $(".card").removeClass("open show");
     $(".card").removeClass("match");
