@@ -57,6 +57,11 @@ setPicturesToCards = () => {
   }
 }
 
+startTimeCounting();
+psuedoRandomSort();
+setIdToDeckCards();
+setPicturesToCards();
+
 //Game Variables
 let number = 0;
 let firstCard = "";
@@ -261,7 +266,3 @@ $("#play").click(() => {
     min = 0;
     $(".card").removeClass("wrong");
 });
-
-startTimeCounting();
-setIdToDeckCards();
-setPicturesToCards();
