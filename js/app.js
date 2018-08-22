@@ -68,6 +68,8 @@ let firstCard = "";
 let secondCard = "";
 let numberOfMoves = 0;
 let correctGuess = 0;
+let fCardClickedId;
+let sCardClickedId;
 
 //Refresh Cards
 turn = () => {
@@ -99,15 +101,17 @@ $(".card").click((event) => {
     if(number === 1) {
       firstCard = event.target.childNodes[1];
       firstId = document.getElementById(event.target.id);
+      fCardClickedId = event.target.id;
       $(firstId).addClass("open show");
     }
     else {
       secondCard = event.target.childNodes[1];
       secondId = document.getElementById(event.target.id);
+      sCardClickedId = event.target.id
       $(secondId).addClass("open show");
     }
 
-    if(number === 2) {
+    if(number === 2 && fCardClickedId !== sCardClickedId) {
       if(firstCard.isEqualNode(secondCard)) {
         $(firstId).addClass("match");
         $(secondId).addClass("match");
